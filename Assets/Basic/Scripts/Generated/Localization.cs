@@ -24,7 +24,7 @@ namespace Excel2Unity.Basic
 		{
 			"message_1", "message_2", "message_3", "message_4", "message_5", "content_1", "content_2", "content_3", "content_4", "content_5", "title_1", "title_2", "title_3", "title_4", "title_5", "title_6", "whatever_msg", "hero_name_1", "hero_name_2", "hero_name_3", "hero_name_4", "hero_name_5",
 		};
-		public static readonly Dictionary<string, string> languageDict = new Dictionary<string, string>() {  { "english", "Localization_english" }, { "spanish", "Localization_spanish" }, };
+		public static readonly Dictionary<string, string> languageDict = new Dictionary<string, string>() {  { "english", "Localization_english" }, { "spanish", "Localization_spanish" }, { "japan", "Localization_japan" }, { "chinese", "Localization_chinese" }, { "korean", "Localization_korean" }, { "thai", "Localization_thai" }, };
 		public static readonly string defaultLanguage = "english";
 	
 		public static string Folder = "Data";
