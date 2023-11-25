@@ -310,18 +310,18 @@ namespace Excel2Unity.Basic
 	    }
 	
 	    private static List<DynamicText> mDynamicTexts = new List<DynamicText>();
-	    public static void RegisterDynamicText(GameObject pComponent, string pLocalizedKey, params string[] pArgs)
+	    public static void RegisterDynamicText(GameObject pObj, string pLocalizedKey, params string[] pArgs)
 	    {
 	        int key = GetIndex(pLocalizedKey);
-	        RegisterDynamicText(pComponent, key, pArgs);
+	        RegisterDynamicText(pObj, key, pArgs);
 	    }
 	
-	    public static void RegisterDynamicText(GameObject pComponent, int pLocalizedKey, params string[] pArgs)
+	    public static void RegisterDynamicText(GameObject pObj, int pLocalizedKey, params string[] pArgs)
 	    {
-	        if (pComponent == null)
+	        if (pObj == null)
 	            return;
 	        for (int i = 0; i < mDynamicTexts.Count; i++)
-	        	if (mDynamicTexts[i].obj == pComponent)
+	        	if (mDynamicTexts[i].obj == pObj)
 	            {
 	                if (mDynamicTexts[i].key != pLocalizedKey || mDynamicTexts[i].args != pArgs)
 	                {
@@ -332,23 +332,23 @@ namespace Excel2Unity.Basic
 	                mDynamicTexts[i].Refresh();
 	                return;
 	            }
-	        var text = new DynamicText(pLocalizedKey, pComponent, pArgs);
+	        var text = new DynamicText(pLocalizedKey, pObj, pArgs);
 	        text.Refresh();
 	        mDynamicTexts.Add(text);
 	#if UNITY_EDITOR
-	        var localizedText = pComponent.GetComponent<LocalizationText>();
+	        var localizedText = pObj.GetComponent<LocalizationText>();
 	        if (localizedText != null)
 	        {
-	            Debug.LogError($"{pComponent.name} should not have LocalizationText!");
+	            Debug.LogError($"{pObj.name} should not have LocalizationText!");
 	            GameObject.Destroy(localizedText);
 	        }
 	#endif
 	    }
 	
-	    public static void UnregisterDynamicText(Text pComponent)
+	    public static void UnregisterDynamicText(GameObject pObj)
 	    {
 	        for (int i = 0; i < mDynamicTexts.Count; i++)
-	            if (mDynamicTexts[i].obj == pComponent)
+	            if (mDynamicTexts[i].obj == pObj)
 	            {
 	                mDynamicTexts.RemoveAt(i);
 	                return;
@@ -376,18 +376,18 @@ namespace Excel2Unity.Basic
 	                try
 	                {
 	#endif
-                        var value = "";
-                        if (args != null)
-                            value = Get(key, args).ToString();
-                        else
-                            value = Get(key).ToString();
-
-                        if (obj.TryGetComponent(out TMPro.TextMeshProUGUI txtPro))
-                            txtPro.text = value;
-                        else if (obj.TryGetComponent(out Text txt))
-                            txt.text = value;
-                        
-                        curLangIndex = Localization.curLangIndex;
+						var value = "";
+	                    if (args != null)
+	                        value = Get(key, args).ToString();
+	                    else
+	                        value = Get(key).ToString();
+	
+	                    if (obj.TryGetComponent(out TMPro.TextMeshProUGUI txtPro))
+	                        txtPro.text = value;
+	                        else if (obj.TryGetComponent(out Text txt))
+	                    txt.text = value;
+	
+						curLangIndex = Localization.curLangIndex;
 	#if UNITY_EDITOR
 	                }
 	                catch (Exception ex)
