@@ -13,17 +13,28 @@ namespace Excel2Unity.Basic
     {
         [SerializeField] private Button m_btnChangeLanguage;
         [SerializeField] private TextMeshProUGUI m_txtCurrentLanguage;
-        [SerializeField] private TextMeshProUGUI m_txtExample;
+        [SerializeField] private TextMeshProUGUI m_txtExample1;
+        [SerializeField] private GameObject m_txtExample2;
         
         private void Start()
         {
-            m_txtCurrentLanguage.text = Localization.currentLanguage;
             m_btnChangeLanguage.onClick.AddListener(() =>
             {
                 int nextLangIndex = (Localization.curLangIndex + 1) % Localization.languageDict.Count;
                 Localization.currentLanguage = Localization.languageDict.Keys.ToArray()[nextLangIndex];
-                m_txtCurrentLanguage.text = Localization.currentLanguage;
             });
+            
+            Localization.onLanguageChanged += () =>
+            {
+                m_txtCurrentLanguage.text = Localization.currentLanguage;
+                m_txtExample1.text = Localization.Get(Localization.hero_name_1).ToString();
+            };
+            
+            m_txtCurrentLanguage.text = Localization.currentLanguage;
+            
+            m_txtExample1.text = Localization.Get(Localization.hero_name_1).ToString();
+            
+            Localization.RegisterDynamicText(m_txtExample2, Localization.hero_name_5);
         }
     }
 }

@@ -47,6 +47,8 @@ namespace Excel2Unity.Basic
             if (GUILayout.Button("Load Data"))
             {
                 m_target.LoadData();
+                EditorUtility.SetDirty(m_target);
+                AssetDatabase.SaveAssets();
             }
         }
     }
