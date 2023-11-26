@@ -15,18 +15,6 @@ namespace Excel2Unity.Basic
         public List<DataBasic1> dataBasic1;
         public List<DataBasic2> dataBasic2;
         public List<DataAdvanced> dataAdvanced;
-        
-        public void LoadData()
-        {
-#if UNITY_EDITOR
-            var txt =  AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Basic/Data/ExampleDataBasic1.txt");
-            dataBasic1 = JsonHelper.ToList<DataBasic1>(txt.text);
-            txt =  AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Basic/Data/ExampleDataBasic2.txt");
-            dataBasic2 = JsonHelper.ToList<DataBasic2>(txt.text);
-            txt = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Basic/Data/ExampleDataAdvanced.txt");
-            dataAdvanced = JsonHelper.ToList<DataAdvanced>(txt.text);
-#endif
-        }
     }
 
 #if UNITY_EDITOR
@@ -46,10 +34,20 @@ namespace Excel2Unity.Basic
             
             if (GUILayout.Button("Load Data"))
             {
-                m_target.LoadData();
+                LoadData();
                 EditorUtility.SetDirty(m_target);
                 AssetDatabase.SaveAssets();
             }
+        }
+
+        private void LoadData()
+        {
+            var txt =  AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Basic/Data/ExampleDataBasic1.txt");
+            m_target.dataBasic1 = JsonHelper.ToList<DataBasic1>(txt.text);
+            txt =  AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Basic/Data/ExampleDataBasic2.txt");
+            m_target.dataBasic2 = JsonHelper.ToList<DataBasic2>(txt.text);
+            txt = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Basic/Data/ExampleDataAdvanced.txt");
+            m_target. dataAdvanced = JsonHelper.ToList<DataAdvanced>(txt.text);
         }
     }
 #endif
