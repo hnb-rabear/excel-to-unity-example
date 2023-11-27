@@ -33,8 +33,10 @@ namespace Excel2Unity.Basic
             m_txtCurrentLanguage.text = Localization.currentLanguage;
             
             m_txtExample1.text = Localization.Get(Localization.hero_name_1).ToString();
+            m_txtExample1.text = Localization.Get("hero_name_" + IDs.HERO_1).ToString();
             
             Localization.RegisterDynamicText(m_txtExample2, Localization.hero_name_5);
+            Localization.RegisterDynamicText(m_txtExample2, "hero_name_" + IDs.HERO_5);
         }
     }
 }
