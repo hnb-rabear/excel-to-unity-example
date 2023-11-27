@@ -176,9 +176,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TxtPro: {fileID: 37900681}
   m_Txt: {fileID: 0}
-  m_LocalizedIDString: message_1
+  m_LocalizedIDString: DAY_X
   m_CaseType: 0
-  m_Args: []
+  m_Args:
+  - 1
   m_IgnoredLangs: []
 --- !u!114 &37900681
 MonoBehaviour:
@@ -200,7 +201,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: "D\xEDa 1"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b902fc2192fff44489633f22c16326f2, type: 2}
   m_sharedMaterial: {fileID: 5768675571806285437, guid: b902fc2192fff44489633f22c16326f2, type: 2}
@@ -721,9 +722,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TxtPro: {fileID: 922870756}
   m_Txt: {fileID: 0}
-  m_LocalizedIDString: message_5
+  m_LocalizedIDString: DAY_X
   m_CaseType: 0
-  m_Args: []
+  m_Args:
+  - 5
   m_IgnoredLangs: []
 --- !u!114 &922870756
 MonoBehaviour:
@@ -745,7 +747,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: "D\xEDa 1"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b902fc2192fff44489633f22c16326f2, type: 2}
   m_sharedMaterial: {fileID: 5768675571806285437, guid: b902fc2192fff44489633f22c16326f2, type: 2}
@@ -875,9 +877,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TxtPro: {fileID: 979678147}
   m_Txt: {fileID: 0}
-  m_LocalizedIDString: message_2
+  m_LocalizedIDString: DAY_X
   m_CaseType: 0
-  m_Args: []
+  m_Args:
+  - 2
   m_IgnoredLangs: []
 --- !u!114 &979678147
 MonoBehaviour:
@@ -899,7 +902,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: "D\xEDa 1"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b902fc2192fff44489633f22c16326f2, type: 2}
   m_sharedMaterial: {fileID: 5768675571806285437, guid: b902fc2192fff44489633f22c16326f2, type: 2}
@@ -1029,9 +1032,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TxtPro: {fileID: 981924990}
   m_Txt: {fileID: 0}
-  m_LocalizedIDString: message_3
+  m_LocalizedIDString: DAY_X
   m_CaseType: 0
-  m_Args: []
+  m_Args:
+  - 3
   m_IgnoredLangs: []
 --- !u!114 &981924990
 MonoBehaviour:
@@ -1053,7 +1057,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: "D\xEDa 1"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b902fc2192fff44489633f22c16326f2, type: 2}
   m_sharedMaterial: {fileID: 5768675571806285437, guid: b902fc2192fff44489633f22c16326f2, type: 2}
@@ -1754,9 +1758,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TxtPro: {fileID: 2088967575}
   m_Txt: {fileID: 0}
-  m_LocalizedIDString: message_4
+  m_LocalizedIDString: DAY_X
   m_CaseType: 0
-  m_Args: []
+  m_Args:
+  - 4
   m_IgnoredLangs: []
 --- !u!114 &2088967575
 MonoBehaviour:
@@ -1778,7 +1783,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: "D\xEDa 1"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b902fc2192fff44489633f22c16326f2, type: 2}
   m_sharedMaterial: {fileID: 5768675571806285437, guid: b902fc2192fff44489633f22c16326f2, type: 2}
