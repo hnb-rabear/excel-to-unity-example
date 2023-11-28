@@ -13,7 +13,7 @@ However, in this article, I will only be discussing the basic part. The advanced
 
 First, open the excel file located at `/Assets/Basic/Data/Example.xlsx`. This is a sample Excel file. Within this file, there are sheets containing sample data that will help you understand how to design various types of data such as IDs, Constants, and Data Tables.
 
-![Example Excel](/media/excel-to-unity-basic-excel-file.png)
+![excel-to-unity-basic-excel-file](https://github.com/nbhung100914/excel-to-unity-example/assets/9100041/1e779d34-c4f3-4237-ae6a-085d459e42da)
 
 ### Constants:
 
@@ -104,7 +104,7 @@ Create 3 directories to store the files that will be exported:
 
 Enter the paths to the directories created above, and other necessary settings.
 
-![Example Excel](/media/excel-to-unity-basic-settings.png)
+![excel-to-unity-basic-settings](https://github.com/nbhung100914/excel-to-unity-example/assets/9100041/eac8c17c-476d-4c65-be6b-6f4907ac44dd)
 
 - Json Data Output: `[your project path]\Assets\Basic\Data`.
 - Constant Output: `[Your project path]\Assets\Basic\Scripts\Generated`, IDs, Constants, Localization API, and LocalizationText Component will be stored here.
@@ -112,42 +112,16 @@ Enter the paths to the directories created above, and other necessary settings.
 - Namespace: `Excel2Unity.Basic`.
 - Languages maps: `korean, japanese, chinese`, we will create a separate characters map for these 3 languages
 
-![Example Excel](/media/excel-to-unity-basic-exporting.png)
+![excel-to-unity-basic-exporting](https://github.com/nbhung100914/excel-to-unity-example/assets/9100041/38708dda-cc86-4aa3-811c-2b23e14a8318)
 
 - Enter the path to the excel file or select the file using the `Select File` button
 - Finally, press `Export Json`, `Export IDs`, `Export Constants`, and `Export Localization` to export data and scripts
 
 The exported files will be as follows
 
-<figure>
-  <Image
-    src="/media/excel-to-unity-basic-exported-scripts.png"
-    alt="Exported scripts"
-    width="500"
-    height="500"
-  />
-  <figcaption>Exported scripts</figcaption>
-</figure>
-
-<figure>
-  <Image
-    src="/media/excel-to-unity-basic-exported-data.png"
-    alt="Exported localization"
-    width="500"
-    height="500"
-  />
-  <figcaption>Exported JSON Data</figcaption>
-</figure>
-
-<figure>
-  <Image
-    src="/media/excel-to-unity-basic-exported-localization.png"
-    alt="Exported localization"
-    width="500"
-    height="500"
-  />
-  <figcaption>Exported localization</figcaption>
-</figure>
+![excel-to-unity-basic-exported-scripts](https://github.com/nbhung100914/excel-to-unity-example/assets/9100041/1c24fcf9-9605-4a06-af6a-6109c60d20c6)
+![excel-to-unity-basic-exported-data](https://github.com/nbhung100914/excel-to-unity-example/assets/9100041/d6f63cc7-7e2c-4143-af9f-93ecde05f01c)
+![excel-to-unity-basic-exported-localization](https://github.com/nbhung100914/excel-to-unity-example/assets/9100041/13f40597-6e70-432a-a74b-5be281db0402)
 
 ## 3. Scripting
 
@@ -228,25 +202,8 @@ private void LoadData()
 
 - Whenever there are changes, you just need to edit on excel and export the new data. Then, in Unity, you just need to Reload the Static Database.
 
-<figure>
-  <Image
-    src="/media/excel-to-unity-basic-scriptable-object.png"
-    alt="excel-to-unity-basic-scriptable-object"
-    width="500"
-    height="500"
-  />
-  <figcaption>ScriptableObject</figcaption>
-</figure>
-
-<figure>
-  <Image
-    src="/media/excel-to-unity-basic-load-data.png"
-    alt="excel-to-unity-basic-load-data"
-    width="500"
-    height="500"
-  />
-  <figcaption>Load Data</figcaption>
-</figure>
+![excel-to-unity-basic-scriptable-object](https://github.com/nbhung100914/excel-to-unity-example/assets/9100041/f1a7c8d6-2d18-4c17-8516-d9cc74c9c58b)
+![excel-to-unity-basic-load-data](https://github.com/nbhung100914/excel-to-unity-example/assets/9100041/6995e048-37b5-49af-b61f-7db87340d075)
 
 ### Localization
 
@@ -287,7 +244,7 @@ Localization.UnregisterDynamicText(m_goExample2);
 
 Using LocalizationText Component.
 
-![font japanese](/media/excel-to-unity-basic-localization-component.png)
+![excel-to-unity-basic-localization-component](https://github.com/nbhung100914/excel-to-unity-example/assets/9100041/28e9453c-2d25-44b3-ae55-ef08adee8063)
 
 TextMeshProUGUI custom font.
 
@@ -301,13 +258,7 @@ In this example, I use three different fonts to create three TextMeshPro fonts:
 
 For each of these fonts, create a TextMeshPro font. In the `Font Asset Creator` window, under the `Character Set` section, select `Character From File`. Then, select the corresponding `characters_map` file under the `Character File` section.
 
-<div className="-mx-2 flex flex-wrap overflow-hidden xl:-mx-2">
-  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
-    ![font japanese](/media/excel-to-unity-basic-font-jp.png)
-  </div>
-  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
-    ![font korean](/media/excel-to-unity-basic-font-kr.png)
-  </div>
-</div>
+![excel-to-unity-basic-font-jp](https://github.com/nbhung100914/excel-to-unity-example/assets/9100041/f56bc334-18ac-43bd-bad5-7c20eb8ffc2f)
+![excel-to-unity-basic-font-kr](https://github.com/nbhung100914/excel-to-unity-example/assets/9100041/4f4cd856-f307-4155-b957-489e92a3ad35)
 
 With the features shown, you now have all the tools you need to build a Static Database with Excel. This is enough to meet the needs of any Casual or Mid-core game.
