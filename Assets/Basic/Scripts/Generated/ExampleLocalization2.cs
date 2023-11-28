@@ -1,8 +1,8 @@
 namespace Excel2Unity.Basic
 {
-	/**
-	 * Author RadBear - nbhung71711@gmail.com - 2017-2021
-	 **/
+	/***
+	 * Author RadBear - nbhung71711@gmail.com - 2017-2023
+	 ***/
 	
 	using System.Collections.Generic;
 	using System.Text;
@@ -11,20 +11,20 @@ namespace Excel2Unity.Basic
 	using UnityEngine.UI;
 	using System.Collections;
 	
-	public static class Localization
+	public static class ExampleLocalization2
 	{
 		public enum ID 
 		{
 			NONE = -1,
-			message_1 = 0, message_2, message_3, message_4, message_5, content_1, content_2, content_3, content_4, content_5, title_1, title_2, title_3, title_4, title_5, title_6, whatever_msg, hero_name_1, hero_name_2, hero_name_3, hero_name_4, hero_name_5, DAY_X, TODAY, TAP_TO_COLLECT, FREE_GIFT, REFRESH_IN, FREE_GIFT_EVERYDAY, WAIT_TIME_MINUS_30M, UPGRADE_BARN, UPGRADE, BUY, GO_TO_SHOP, CONFIRM, CANCEL, WARNING, BARN_UPGRADE, FINISH_BUILDING, FINISH, COMPLETE, NOT_ENOUGH_COIN, NOT_ENOUGH_CASH, TAP_TO_CLOSE, SEND, UNLOCK_AT_LEVEL_X, REQUIRED_LEVEL_X, REQUIRED_CITY_LEVEL_X, MISSION_COMPLETED,
+			DAY_X = 0, TODAY, TAP_TO_COLLECT, FREE_GIFT, REFRESH_IN, FREE_GIFT_EVERYDAY, WAIT_TIME_MINUS_30M, UPGRADE_BARN, UPGRADE, BUY, GO_TO_SHOP, CONFIRM, CANCEL, WARNING, BARN_UPGRADE, FINISH_BUILDING, FINISH, COMPLETE, NOT_ENOUGH_COIN, NOT_ENOUGH_CASH, TAP_TO_CLOSE, SEND, UNLOCK_AT_LEVEL_X, REQUIRED_LEVEL_X, REQUIRED_CITY_LEVEL_X, MISSION_COMPLETED,
 		}
 		public const int
-			message_1 = 0, message_2 = 1, message_3 = 2, message_4 = 3, message_5 = 4, content_1 = 5, content_2 = 6, content_3 = 7, content_4 = 8, content_5 = 9, title_1 = 10, title_2 = 11, title_3 = 12, title_4 = 13, title_5 = 14, title_6 = 15, whatever_msg = 16, hero_name_1 = 17, hero_name_2 = 18, hero_name_3 = 19, hero_name_4 = 20, hero_name_5 = 21, DAY_X = 22, TODAY = 23, TAP_TO_COLLECT = 24, FREE_GIFT = 25, REFRESH_IN = 26, FREE_GIFT_EVERYDAY = 27, WAIT_TIME_MINUS_30M = 28, UPGRADE_BARN = 29, UPGRADE = 30, BUY = 31, GO_TO_SHOP = 32, CONFIRM = 33, CANCEL = 34, WARNING = 35, BARN_UPGRADE = 36, FINISH_BUILDING = 37, FINISH = 38, COMPLETE = 39, NOT_ENOUGH_COIN = 40, NOT_ENOUGH_CASH = 41, TAP_TO_CLOSE = 42, SEND = 43, UNLOCK_AT_LEVEL_X = 44, REQUIRED_LEVEL_X = 45, REQUIRED_CITY_LEVEL_X = 46, MISSION_COMPLETED = 47;
+			DAY_X = 0, TODAY = 1, TAP_TO_COLLECT = 2, FREE_GIFT = 3, REFRESH_IN = 4, FREE_GIFT_EVERYDAY = 5, WAIT_TIME_MINUS_30M = 6, UPGRADE_BARN = 7, UPGRADE = 8, BUY = 9, GO_TO_SHOP = 10, CONFIRM = 11, CANCEL = 12, WARNING = 13, BARN_UPGRADE = 14, FINISH_BUILDING = 15, FINISH = 16, COMPLETE = 17, NOT_ENOUGH_COIN = 18, NOT_ENOUGH_CASH = 19, TAP_TO_CLOSE = 20, SEND = 21, UNLOCK_AT_LEVEL_X = 22, REQUIRED_LEVEL_X = 23, REQUIRED_CITY_LEVEL_X = 24, MISSION_COMPLETED = 25;
 		public static readonly string[] idString = new string[]
 		{
-			"message_1", "message_2", "message_3", "message_4", "message_5", "content_1", "content_2", "content_3", "content_4", "content_5", "title_1", "title_2", "title_3", "title_4", "title_5", "title_6", "whatever_msg", "hero_name_1", "hero_name_2", "hero_name_3", "hero_name_4", "hero_name_5", "DAY_X", "TODAY", "TAP_TO_COLLECT", "FREE_GIFT", "REFRESH_IN", "FREE_GIFT_EVERYDAY", "WAIT_TIME_MINUS_30M", "UPGRADE_BARN", "UPGRADE", "BUY", "GO_TO_SHOP", "CONFIRM", "CANCEL", "WARNING", "BARN_UPGRADE", "FINISH_BUILDING", "FINISH", "COMPLETE", "NOT_ENOUGH_COIN", "NOT_ENOUGH_CASH", "TAP_TO_CLOSE", "SEND", "UNLOCK_AT_LEVEL_X", "REQUIRED_LEVEL_X", "REQUIRED_CITY_LEVEL_X", "MISSION_COMPLETED",
+			"DAY_X", "TODAY", "TAP_TO_COLLECT", "FREE_GIFT", "REFRESH_IN", "FREE_GIFT_EVERYDAY", "WAIT_TIME_MINUS_30M", "UPGRADE_BARN", "UPGRADE", "BUY", "GO_TO_SHOP", "CONFIRM", "CANCEL", "WARNING", "BARN_UPGRADE", "FINISH_BUILDING", "FINISH", "COMPLETE", "NOT_ENOUGH_COIN", "NOT_ENOUGH_CASH", "TAP_TO_CLOSE", "SEND", "UNLOCK_AT_LEVEL_X", "REQUIRED_LEVEL_X", "REQUIRED_CITY_LEVEL_X", "MISSION_COMPLETED",
 		};
-		public static readonly Dictionary<string, string> languageDict = new Dictionary<string, string>() {  { "english", "Localization_english" }, { "spanish", "Localization_spanish" }, { "japan", "Localization_japan" }, { "chinese", "Localization_chinese" }, { "korean", "Localization_korean" }, { "thai", "Localization_thai" }, };
+		public static readonly Dictionary<string, string> languageDict = new Dictionary<string, string>() {  { "english", "ExampleLocalization2_english" }, { "spanish", "ExampleLocalization2_spanish" }, { "japan", "ExampleLocalization2_japan" }, { "korean", "ExampleLocalization2_korean" }, { "thai", "ExampleLocalization2_thai" }, { "chinese", "ExampleLocalization2_chinese" }, };
 		public static readonly string defaultLanguage = "english";
 	
 		public static string Folder = "Data";
@@ -59,7 +59,7 @@ namespace Excel2Unity.Basic
 			if (mLanguageTemp != lang)
 			{
 	#if UNITY_EDITOR
-				Debug.Log($"Init {nameof(Localization)}");
+				Debug.Log($"Init {nameof(ExampleLocalization2)}");
 	#endif
 				string file = languageDict[lang];
 				var asset = Resources.Load<TextAsset>(Folder + "/" + file);
@@ -107,7 +107,7 @@ namespace Excel2Unity.Basic
 			if (mLanguageTemp != lang)
 			{
 	#if UNITY_EDITOR
-				Debug.Log($"Init {nameof(Localization)}");
+				Debug.Log($"Init {nameof(ExampleLocalization2)}");
 	#endif
 				string file = languageDict[lang];
 				var request = Resources.LoadAsync<TextAsset>(Folder + "/" + file);
@@ -336,10 +336,10 @@ namespace Excel2Unity.Basic
 	        text.Refresh();
 	        mDynamicTexts.Add(text);
 	#if UNITY_EDITOR
-	        var localizedText = pObj.GetComponent<LocalizationText>();
+	        var localizedText = pObj.GetComponent<ExampleLocalization2Text>();
 	        if (localizedText != null)
 	        {
-	            Debug.LogError($"{pObj.name} should not have LocalizationText!");
+	            Debug.LogError($"{pObj.name} should not have ExampleLocalization2Text!");
 	            GameObject.Destroy(localizedText);
 	        }
 	#endif
@@ -369,7 +369,7 @@ namespace Excel2Unity.Basic
 	        }
 	        public void Refresh()
 	        {
-	            if (curLangIndex != Localization.curLangIndex)
+	            if (curLangIndex != ExampleLocalization2.curLangIndex)
 	            {
 	#if UNITY_EDITOR
 	                var text = Get(key);
@@ -384,10 +384,10 @@ namespace Excel2Unity.Basic
 	
 	                    if (obj.TryGetComponent(out TMPro.TextMeshProUGUI txtPro))
 	                        txtPro.text = value;
-	                        else if (obj.TryGetComponent(out Text txt))
-	                    txt.text = value;
+	                    else if (obj.TryGetComponent(out Text txt))
+	                        txt.text = value;
 	
-						curLangIndex = Localization.curLangIndex;
+						curLangIndex = ExampleLocalization2.curLangIndex;
 	#if UNITY_EDITOR
 	                }
 	                catch (Exception ex)
@@ -413,7 +413,7 @@ namespace Excel2Unity.Basic
 			foreach (var guid in assetIds)
 			{
 				var obj = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(UnityEditor.AssetDatabase.GUIDToAssetPath(guid));
-				var components = obj.GetComponentsInChildren<LocalizationText>(true);
+				var components = obj.GetComponentsInChildren<ExampleLocalization2Text>(true);
 				foreach (var com in components)
 				{
 					string id = com.LocalizedIDString;
@@ -431,8 +431,8 @@ namespace Excel2Unity.Basic
 			string intIds = "";
 			for (int i = 0; i < pRefinedIds.Count; i++)
 			{
-				enumIds += $"{nameof(Localization)}.ID.{pRefinedIds[i]}";
-				intIds += $"{nameof(Localization)}.{pRefinedIds[i]}";
+				enumIds += $"{nameof(ExampleLocalization2)}.ID.{pRefinedIds[i]}";
+				intIds += $"{nameof(ExampleLocalization2)}.{pRefinedIds[i]}";
 				if (i < pRefinedIds.Count - 1)
 				{
 					enumIds += ", ";
@@ -444,26 +444,26 @@ namespace Excel2Unity.Basic
 			string template = GetTemplateClassContainsRefinedIds();
 			string result = template.Replace("ENUM_IDS", enumIds).Replace("INT_IDS", intIds);
 			string directoryPath = $"{Application.dataPath}/LocalizationRefinedIds";
-			string path = $"{directoryPath}/{nameof(Localization)}RefinedIds.cs";
+			string path = $"{directoryPath}/{nameof(ExampleLocalization2)}RefinedIds.cs";
 			if (!System.IO.Directory.Exists(directoryPath))
 				System.IO.Directory.CreateDirectory(directoryPath);
 			System.IO.File.WriteAllText(path, result);
 		}
 		private static string GetTemplateClassContainsRefinedIds()
 		{
-			string content = $"namespace {typeof(Localization).Namespace}\n"
+			string content = $"namespace {typeof(ExampleLocalization2).Namespace}\n"
 				+ "{\n"
 				+ "\tusing System.Collections.Generic;\n"
-				+ $"\tpublic class LocalizationRefinedIds\n"
+				+ $"\tpublic class ExampleLocalization2RefinedIds\n"
 				+ "\t{\n"
-				+ "\t\tpublic static readonly List<Localization.ID> enumIds = new List<Localization.ID> { ENUM_IDS };\n"
+				+ "\t\tpublic static readonly List<ExampleLocalization2.ID> enumIds = new List<ExampleLocalization2.ID> { ENUM_IDS };\n"
 				+ "\t\tpublic static readonly List<int> intIds = new List<int> { INT_IDS };\n"
 				+ "\t}\n"
 				+ "}";
 			return content;
 		}
-		[UnityEditor.MenuItem("Assets/Create/RCore/Localization Refined Ids/Create LocalizationRefinedIds")]
-		public static void CreateLocalizationRefinedIds()
+		[UnityEditor.MenuItem("Assets/Create/RCore/Localization Refined Ids/Create ExampleLocalization2RefinedIds")]
+		public static void CreateExampleLocalization2RefinedIds()
 		{
 			string currentPath = UnityEditor.AssetDatabase.GetAssetPath(UnityEditor.Selection.activeObject);
 			CreateClassContainsRefinedIds(currentPath);
@@ -471,7 +471,7 @@ namespace Excel2Unity.Basic
 	#endif
 	}
 	
-	public class LocalizationGetter
+	public class ExampleLocalization2Getter
 	{
 	    private static Dictionary<string, int> cachedTexts = new Dictionary<string, int>();
 	
@@ -481,14 +481,14 @@ namespace Excel2Unity.Basic
 	    private int mIndex = -1;
 	    private bool mCheckKey;
 	
-	    public LocalizationGetter(string pKey, string pDefault)
+	    public ExampleLocalization2Getter(string pKey, string pDefault)
 	    {
 	        key = pKey;
 	        defaultStr = pDefault;
 	
 	#if UNITY_EDITOR
 	        //In Editor we check it soon to find missing localization
-	        Localization.Get(key, ref mIndex);
+	        ExampleLocalization2.Get(key, ref mIndex);
 	        mCheckKey = true;
 	#endif
 	    }
@@ -497,17 +497,17 @@ namespace Excel2Unity.Basic
 	    {
 	        if (!mCheckKey)
 	        {
-	            Localization.Get(key, ref mIndex);
+	            ExampleLocalization2.Get(key, ref mIndex);
 	            mCheckKey = true;
 	        }
 	
 	        if (mIndex == -1)
 	            return defaultStr;
-	        var text = Localization.Get(mIndex).ToString();
+	        var text = ExampleLocalization2.Get(mIndex).ToString();
 	        if (string.IsNullOrEmpty(text))
 	            return defaultStr;
 	        else
-	            return Localization.Get(mIndex).ToString().Replace("\\n", "\u000a");
+	            return ExampleLocalization2.Get(mIndex).ToString().Replace("\\n", "\u000a");
 	    }
 	
 	    public static string GetCached(string pKey)
@@ -517,7 +517,7 @@ namespace Excel2Unity.Basic
 	            int id = cachedTexts[pKey];
 	            if (id != -1)
 	            {
-	                string text = Localization.Get(cachedTexts[pKey]).ToString();
+	                string text = ExampleLocalization2.Get(cachedTexts[pKey]).ToString();
 	                return !string.IsNullOrEmpty(text) ? text : pKey;
 	            }
 	            return pKey;
@@ -525,7 +525,7 @@ namespace Excel2Unity.Basic
 	        else
 	        {
 	            int id = -1;
-	            string text = Localization.Get(pKey, ref id).ToString();
+	            string text = ExampleLocalization2.Get(pKey, ref id).ToString();
 	            cachedTexts.Add(pKey, id);
 	            return !string.IsNullOrEmpty(text) ? text : pKey;
 	        }

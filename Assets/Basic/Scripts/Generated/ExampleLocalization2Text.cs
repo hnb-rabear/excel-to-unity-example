@@ -1,8 +1,8 @@
 namespace Excel2Unity.Basic
 {
-	/**
-	 * Author RadBear - nbhung71711@gmail.com - 2017-2021
-	 **/
+	/***
+	 * Author RadBear - nbhung71711@gmail.com - 2017-2023
+	 ***/
 	
 	using System;
 	using System.Collections;
@@ -17,7 +17,7 @@ namespace Excel2Unity.Basic
 	#endif
 	
 	[DisallowMultipleComponent]
-	public class LocalizationText : MonoBehaviour
+	public class ExampleLocalization2Text : MonoBehaviour
 	{
 	    public enum CaseType
 	    {
@@ -49,12 +49,12 @@ namespace Excel2Unity.Basic
 	    {
 	        Refresh();
 			
-			Localization.onLanguageChanged += OnLanguageChanged;
+			ExampleLocalization2.onLanguageChanged += OnLanguageChanged;
 	    }
 		
 	    private void OnDisable()
 	    {
-			Localization.onLanguageChanged -= OnLanguageChanged;
+			ExampleLocalization2.onLanguageChanged -= OnLanguageChanged;
 		}
 	
 	    private void OnValidate()
@@ -62,10 +62,11 @@ namespace Excel2Unity.Basic
 	        if (Application.isPlaying)
 	            return;
 	
+	        if (string.IsNullOrEmpty(m_LocalizedIDString))
+				return;
 			Init();
-			
 			int localizedID = -1;
-			Localization.Get(m_LocalizedIDString, ref localizedID);
+			ExampleLocalization2.Get(m_LocalizedIDString, ref localizedID);
 			if (localizedID == -1)
 			{
 				string path = name;
@@ -75,7 +76,7 @@ namespace Excel2Unity.Basic
 					path = $"{parent.name}.{path}";
 					parent = parent.parent;
 				}
-				Debug.LogError($"{path}: not found {m_LocalizedIDString} in {nameof(Localization)}");
+				Debug.LogError($"{path}: not found {m_LocalizedIDString} in {nameof(ExampleLocalization2)}");
 			}
 	    }
 		
@@ -84,7 +85,7 @@ namespace Excel2Unity.Basic
 	        if (m_LocalizedID != pId)
 	        {
 	            m_LocalizedID = pId;
-	            m_LocalizedIDString = Localization.idString[m_LocalizedID];
+	            m_LocalizedIDString = ExampleLocalization2.idString[m_LocalizedID];
 	        }
 			m_Args = pArgs;
 			Refresh();
@@ -112,16 +113,16 @@ namespace Excel2Unity.Basic
 	
 	    public void Refresh()
 	    {
-			int curLangIndex = Localization.curLangIndex;
+			int curLangIndex = ExampleLocalization2.curLangIndex;
 	        if (Application.isPlaying && m_LanguageIndex == curLangIndex)
 				return;
-			if (m_IgnoredLangs.Count > 0 && m_IgnoredLangs.Contains(Localization.currentLanguage))
+			if (m_IgnoredLangs.Count > 0 && m_IgnoredLangs.Contains(ExampleLocalization2.currentLanguage))
 				return;
 	        string text = "";
 	        if (m_LocalizedID >= 0)
-	            text = Localization.Get(m_LocalizedID).ToString();
+	            text = ExampleLocalization2.Get(m_LocalizedID).ToString();
 	        else if (!string.IsNullOrEmpty(m_LocalizedIDString))
-	            text = Localization.Get(m_LocalizedIDString, ref m_LocalizedID).ToString();
+	            text = ExampleLocalization2.Get(m_LocalizedIDString, ref m_LocalizedID).ToString();
 	        switch (m_CaseType)
 	        {
 	            case CaseType.LowerCase:
@@ -166,10 +167,10 @@ namespace Excel2Unity.Basic
 	    }
 	
 	#if UNITY_EDITOR
-	    [CustomEditor(typeof(LocalizationText))]
-	    public class LocalizationTextEditor : Editor
+	    [CustomEditor(typeof(ExampleLocalization2Text))]
+	    public class ExampleLocalization2TextEditor : Editor
 	    {
-	        private LocalizationText m_Target;
+	        private ExampleLocalization2Text m_Target;
 	        private string m_Search;
 	        private bool m_ShowText;
 	        private int m_MaxResults;
@@ -178,7 +179,7 @@ namespace Excel2Unity.Basic
 	        private void OnEnable()
 	        {
 	            m_MaxResults = 20;
-	            m_Target = target as LocalizationText;
+	            m_Target = target as ExampleLocalization2Text;
 	        }
 	
 	        public override void OnInspectorGUI()
@@ -196,9 +197,9 @@ namespace Excel2Unity.Basic
 	            if (GUILayout.Button("Refresh"))
 	                m_Target.Refresh();
 					
-				if (Localization.currentLanguage != Localization.defaultLanguage && GUILayout.Button("Reset Default Language"))
+				if (ExampleLocalization2.currentLanguage != ExampleLocalization2.defaultLanguage && GUILayout.Button("Reset Default Language"))
 	            {
-					Localization.currentLanguage = Localization.defaultLanguage;
+					ExampleLocalization2.currentLanguage = ExampleLocalization2.defaultLanguage;
 					m_Target.Refresh();
 				}
 				
@@ -213,14 +214,14 @@ namespace Excel2Unity.Basic
 						if (GUILayout.Button("<"))
 						{
 							m_IgnoredLangIdx--;
-							m_IgnoredLangIdx = Mathf.Clamp(m_IgnoredLangIdx, 0, Localization.languageDict.Count - 1);
-							m_Target.m_IgnoredLangs[i] = Localization.GetLanguage(m_IgnoredLangIdx);
+							m_IgnoredLangIdx = Mathf.Clamp(m_IgnoredLangIdx, 0, ExampleLocalization2.languageDict.Count - 1);
+							m_Target.m_IgnoredLangs[i] = ExampleLocalization2.GetLanguage(m_IgnoredLangIdx);
 						}
 						if (GUILayout.Button(">"))
 						{
 							m_IgnoredLangIdx++;
-							m_IgnoredLangIdx = Mathf.Clamp(m_IgnoredLangIdx, 0, Localization.languageDict.Count - 1);
-							m_Target.m_IgnoredLangs[i] = Localization.GetLanguage(m_IgnoredLangIdx);
+							m_IgnoredLangIdx = Mathf.Clamp(m_IgnoredLangIdx, 0, ExampleLocalization2.languageDict.Count - 1);
+							m_Target.m_IgnoredLangs[i] = ExampleLocalization2.GetLanguage(m_IgnoredLangIdx);
 						}
 						if (GUILayout.Button("Remove"))
 						{
@@ -234,21 +235,21 @@ namespace Excel2Unity.Basic
 				if (GUILayout.Button("Test Next Lang"))
 	            {
 	                int index = 0;
-	                foreach (var lang in Localization.languageDict)
+	                foreach (var lang in ExampleLocalization2.languageDict)
 	                {
-	                    if (lang.Key == Localization.currentLanguage)
+	                    if (lang.Key == ExampleLocalization2.currentLanguage)
 	                        break;
 	                    index++;
 	                }
 	
-	                index = (index + 1) % Localization.languageDict.Count;
+	                index = (index + 1) % ExampleLocalization2.languageDict.Count;
 	
 	                int index2 = 0;
-	                foreach (var lang in Localization.languageDict)
+	                foreach (var lang in ExampleLocalization2.languageDict)
 	                {
 	                    if (index2 == index)
 	                    {
-	                        Localization.currentLanguage = lang.Key;
+	                        ExampleLocalization2.currentLanguage = lang.Key;
 	                        m_Target.Refresh();
 	                        break;
 	                    }
@@ -261,7 +262,7 @@ namespace Excel2Unity.Basic
 	
 	            int count = 0;
 	            string[] searchs = m_Search.Split(' ');
-	            for (int i = 0; i < Localization.idString.Length; i++)
+	            for (int i = 0; i < ExampleLocalization2.idString.Length; i++)
 	            {
 	                if (count >= m_MaxResults)
 	                {
@@ -270,7 +271,7 @@ namespace Excel2Unity.Basic
 						break;
 	                }
 	                bool contain = false;
-	                string idString = Localization.idString[i];
+	                string idString = ExampleLocalization2.idString[i];
 	                for (int j = 0; j < searchs.Length; j++)
 	                {
 	                    if (idString.ToLower().Contains(searchs[j].ToLower()))
@@ -283,7 +284,7 @@ namespace Excel2Unity.Basic
 	                {
 	                    string additional = "";
 	                    if (m_ShowText)
-	                        additional = Localization.Get(idString).ToString();
+	                        additional = ExampleLocalization2.Get(idString).ToString();
 	                    GUI.backgroundColor = Color.yellow;
 	                    var style = new GUIStyle("Button");
 	                    string buttonName = ($"{idString} / {additional}");

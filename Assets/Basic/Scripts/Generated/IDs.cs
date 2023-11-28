@@ -1,8 +1,8 @@
 namespace Excel2Unity.Basic
 {
-	/**
-	 * Author RadBear - nbhung71711@gmail.com - 2017-2021
-	 **/
+	/***
+	 * Author RadBear - nbhung71711@gmail.com - 2017-2023
+	 ***/
 	
 	using System;
 	
@@ -71,5 +71,6 @@ namespace Excel2Unity.Basic
 		public const int GENDER_HELICOPTER = 4;
 		public enum Gender { GENDER_NONE = 1, GENDER_MALE = 2, GENDER_FEMALE = 3, GENDER_HELICOPTER = 4 }
 		#endregion
+	
 	}
 }
