@@ -13,7 +13,7 @@ However, in this article, I will only be discussing the basic part. The advanced
 
 First, open the excel file located at `/Assets/Basic/Data/Example.xlsx`. This is a sample Excel file. Within this file, there are sheets containing sample data that will help you understand how to design various types of data such as IDs, Constants, and Data Tables.
 
-![excel-to-unity-basic-excel-file](https://github.com/nbhung100914/excel-to-unity-example/assets/9100041/1e779d34-c4f3-4237-ae6a-085d459e42da)
+![excel-to-unity-basic-excel-file](https://github.com/nbhung100914/excel-to-unity-example/assets/9100041/87454ce5-e7a3-489d-8ffe-2cecb647622c)
 
 ### Constants:
 
@@ -104,7 +104,7 @@ Create 3 directories to store the files that will be exported:
 
 Enter the paths to the directories created above, and other necessary settings.
 
-![excel-to-unity-basic-settings](https://github.com/nbhung100914/excel-to-unity-example/assets/9100041/eac8c17c-476d-4c65-be6b-6f4907ac44dd)
+![excel-to-unity-basic-settings](https://github.com/nbhung100914/excel-to-unity-example/assets/9100041/ed6874aa-b240-40e6-94fc-8494271344d3)
 
 - Json Data Output: `[your project path]\Assets\Basic\Data`.
 - Constant Output: `[Your project path]\Assets\Basic\Scripts\Generated`, IDs, Constants, Localization API, and LocalizationText Component will be stored here.
@@ -112,16 +112,17 @@ Enter the paths to the directories created above, and other necessary settings.
 - Namespace: `Excel2Unity.Basic`.
 - Languages maps: `korean, japanese, chinese`, we will create a separate characters map for these 3 languages
 
-![excel-to-unity-basic-exporting](https://github.com/nbhung100914/excel-to-unity-example/assets/9100041/38708dda-cc86-4aa3-811c-2b23e14a8318)
+![excel-to-unity-basic-exporting](https://github.com/nbhung100914/excel-to-unity-example/assets/9100041/1adc69e7-06fc-433a-b59c-fc2049a53163)
 
 - Enter the path to the excel file or select the file using the `Select File` button
 - Finally, press `Export Json`, `Export IDs`, `Export Constants`, and `Export Localization` to export data and scripts
 
 The exported files will be as follows
 
-![excel-to-unity-basic-exported-scripts](https://github.com/nbhung100914/excel-to-unity-example/assets/9100041/1c24fcf9-9605-4a06-af6a-6109c60d20c6)
-![excel-to-unity-basic-exported-data](https://github.com/nbhung100914/excel-to-unity-example/assets/9100041/d6f63cc7-7e2c-4143-af9f-93ecde05f01c)
-![excel-to-unity-basic-exported-localization](https://github.com/nbhung100914/excel-to-unity-example/assets/9100041/13f40597-6e70-432a-a74b-5be281db0402)
+![excel-to-unity-basic-exported-scripts](https://github.com/nbhung100914/excel-to-unity-example/assets/9100041/365f5526-e0b2-410b-912b-5a7c09710edc)
+![excel-to-unity-basic-exported-data](https://github.com/nbhung100914/excel-to-unity-example/assets/9100041/ea6c490d-fa24-4857-b48b-fffc4d85ddcd)
+![excel-to-unity-basic-exported-localization](https://github.com/nbhung100914/excel-to-unity-example/assets/9100041/669aa26d-de9c-4218-87da-964d302df6a1)
+
 
 ## 3. Scripting
 
@@ -202,8 +203,8 @@ private void LoadData()
 
 - Whenever there are changes, you just need to edit on excel and export the new data. Then, in Unity, you just need to Reload the Static Database.
 
-![excel-to-unity-basic-scriptable-object](https://github.com/nbhung100914/excel-to-unity-example/assets/9100041/f1a7c8d6-2d18-4c17-8516-d9cc74c9c58b)
-![excel-to-unity-basic-load-data](https://github.com/nbhung100914/excel-to-unity-example/assets/9100041/6995e048-37b5-49af-b61f-7db87340d075)
+![excel-to-unity-basic-scriptable-object](https://github.com/nbhung100914/excel-to-unity-example/assets/9100041/0b4bd9fb-5a24-4ec6-ba7d-05b7caba1f22)
+![excel-to-unity-basic-load-data](https://github.com/nbhung100914/excel-to-unity-example/assets/9100041/3452494e-0a13-4953-af79-900c83ec3809)
 
 ### Localization
 
