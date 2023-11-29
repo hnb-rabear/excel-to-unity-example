@@ -171,12 +171,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 37900678}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1501be75a755eca479f6a62d0167e05e, type: 3}
+  m_Script: {fileID: 11500000, guid: e33c4999e16a6ef429988074d2410d77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_TxtPro: {fileID: 37900681}
   m_Txt: {fileID: 0}
-  m_LocalizedIDString: DAY_X
+  m_LocalizedIDString: message_1
   m_CaseType: 0
   m_Args:
   - 1
@@ -201,7 +201,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "D\xEDa 1"
+  m_text: "\uC774\uAC74 \uC601\uC5B4 \uBA54\uC2DC\uC9C0\uC57C 1"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b902fc2192fff44489633f22c16326f2, type: 2}
   m_sharedMaterial: {fileID: 5768675571806285437, guid: b902fc2192fff44489633f22c16326f2, type: 2}
@@ -717,7 +717,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 922870753}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1501be75a755eca479f6a62d0167e05e, type: 3}
+  m_Script: {fileID: 11500000, guid: 46d493c16627ba64cab302b4963716ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_TxtPro: {fileID: 922870756}
@@ -872,7 +872,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 979678144}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1501be75a755eca479f6a62d0167e05e, type: 3}
+  m_Script: {fileID: 11500000, guid: 46d493c16627ba64cab302b4963716ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_TxtPro: {fileID: 979678147}
@@ -1027,7 +1027,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 981924987}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1501be75a755eca479f6a62d0167e05e, type: 3}
+  m_Script: {fileID: 11500000, guid: 46d493c16627ba64cab302b4963716ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_TxtPro: {fileID: 981924990}
@@ -1753,7 +1753,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2088967572}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1501be75a755eca479f6a62d0167e05e, type: 3}
+  m_Script: {fileID: 11500000, guid: 46d493c16627ba64cab302b4963716ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_TxtPro: {fileID: 2088967575}

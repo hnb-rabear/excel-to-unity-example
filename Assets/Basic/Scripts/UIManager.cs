@@ -15,8 +15,9 @@ namespace Excel2Unity.Basic
         [SerializeField] private TextMeshProUGUI m_txtCurrentLanguage;
         [SerializeField] private TextMeshProUGUI m_txtExample1;
         [SerializeField] private GameObject m_txtExample2;
-        
-        private void Start()
+
+        /*
+		private void Start()
         {
             m_btnChangeLanguage.onClick.AddListener(() =>
             {
@@ -37,6 +38,34 @@ namespace Excel2Unity.Basic
             
             Localization.RegisterDynamicText(m_txtExample2, Localization.hero_name_5);
             Localization.RegisterDynamicText(m_txtExample2, "hero_name_" + IDs.HERO_5);
+        }
+        */
+        
+        private IEnumerator Start()
+        {
+            yield return LocalizationsManager.InitAsync(null);
+            
+            LocalizationsManager.currentLanguage = "spanish";
+            
+            m_btnChangeLanguage.onClick.AddListener(() =>
+            {
+                int nextLangIndex = (ExampleLocalization.curLangIndex + 1) % ExampleLocalization.languageDict.Count;
+                ExampleLocalization.currentLanguage = ExampleLocalization.languageDict.Keys.ToArray()[nextLangIndex];
+            });
+            
+            ExampleLocalization.onLanguageChanged += () =>
+            {
+                m_txtCurrentLanguage.text = ExampleLocalization.currentLanguage;
+                m_txtExample1.text = ExampleLocalization.Get(ExampleLocalization.hero_name_1).ToString();
+            };
+            
+            m_txtCurrentLanguage.text = ExampleLocalization.currentLanguage;
+            
+            m_txtExample1.text = ExampleLocalization.Get(ExampleLocalization.hero_name_1).ToString();
+            m_txtExample1.text = ExampleLocalization.Get("hero_name_" + IDs.HERO_1).ToString();
+            
+            ExampleLocalization.RegisterDynamicText(m_txtExample2, ExampleLocalization.hero_name_5);
+            ExampleLocalization.RegisterDynamicText(m_txtExample2, "hero_name_" + IDs.HERO_5);
         }
     }
 }
