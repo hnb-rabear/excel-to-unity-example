@@ -208,7 +208,7 @@ private void LoadData()
 
 ### Localization
 
-Change the language.
+- Change the language.
 
 ```cs
 // Set the language japanese
@@ -217,13 +217,13 @@ Localization.currentLanguage = "japanese";
 Localization.currentLanguage = "korean";
 ```
 
-Register an event handler for the language change event.
+- Register an event handler for the language change event.
 
 ```cs
 Localization.onLanguageChanged += OnLanguageChanged;
 ```
 
-Get the localized content using a Key. However, with this method, the Text will not automatically update its display when the language changes.
+- Get the localized content using a Key. However, with this method, the Text will not automatically update its display when the language changes.
 
 ```cs
 // Get the localized text using integer key
@@ -232,7 +232,7 @@ m_txtExample1.text = Localization.Get(Localization.DAY_X, 1).ToString();
 m_txtExample1.text = Localization.Get("DAY_X", 1).ToString();
 ```
 
-You can link a gameObject which contain a Text or TextMeshProUGUI Component with a Key so that the Text automatically updates when the language changes.
+- You can link a gameObject which contain a Text or TextMeshProUGUI Component with a Key so that the Text automatically updates when the language changes.
 
 ```cs
 // Register a Dynamic Text with a integer key
@@ -243,11 +243,52 @@ Localization.RegisterDynamicText(m_txtExample2, "hero_name_" + IDs.HERO_5);
 Localization.UnregisterDynamicText(m_goExample2);
 ```
 
-Using LocalizationText Component.
+- Using LocalizationText Component.
 
 ![excel-to-unity-basic-localization-component](https://github.com/nbhung100914/excel-to-unity-example/assets/9100041/28e9453c-2d25-44b3-ae55-ef08adee8063)
 
-TextMeshProUGUI custom font.
+### Separate Localization
+
+In case you choose Separate Localization in the Settings table. The output Localization data and Localization scripts will look like this.
+
+![excel-to-unity-basic-exported-multi-localization](https://github.com/nbhung100914/excel-to-unity-example/assets/9100041/000b0c23-c1b8-4596-aa15-bbbc3e009e68)
+
+The Localization Code will change as follows.
+
+```cs
+LocalizationsManager.currentLanguage = "spanish";
+```
+
+```cs
+private IEnumerator Start()
+{
+    yield return LocalizationsManager.InitAsync(null);
+}
+```
+
+```cs
+LocalizationsManager.onLanguageChanged += OnLanguageChanged;
+```
+
+```cs
+// Get localized text by integer key
+m_txtExample1.text = ExampleLocalization.Get(ExampleLocalization.DAY_X, 1).ToString();
+// Access localized text by string key
+m_txtExample1.text = ExampleLocalization.Get("DAY_X", 1).ToString();
+```
+
+```cs
+// Register a Dynamic Text linked with an integer key
+ExampleLocalization.RegisterDynamicText(m_goExample2, ExampleLocalization.hero_name_5);
+// Or link gameObject with a string key
+ExampleLocalization.RegisterDynamicText(m_txtExample2, "hero_name_" + IDs.HERO_5);
+// Unregister gameObject
+ExampleLocalization.UnregisterDynamicText(m_goExample2);
+```
+
+![excel-to-unity-basic-localization-component-2](https://github.com/nbhung100914/excel-to-unity-example/assets/9100041/0fcb4c69-8816-40d7-a281-6f2f8a35db44)
+
+### TextMeshProUGUI custom font.
 
 We will use three files `characters_map_japan`, `characters_map_korean`, and `characters_map_chinese` to create three TextMeshPro fonts for these languages. These three characters_map files contain all the characters appearing in the Localization sheet of each language.
 
