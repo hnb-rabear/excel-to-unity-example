@@ -236,10 +236,11 @@ m_txtExample1.text = Localization.Get("DAY_X", 1).ToString();
 
 ```cs
 // Register a Dynamic Text with a integer key
-Localization.RegisterDynamicText(m_goExample2, Localization.hero_name_5);
+Localization.RegisterDynamicText(m_goExample1 Localization.hero_name_5);
 // Register a Dynamic Text with a string key
-Localization.RegisterDynamicText(m_txtExample2, "hero_name_" + IDs.HERO_5);
+Localization.RegisterDynamicText(m_goExample2, "hero_name_" + IDs.HERO_5);
 // Unregister the gameObject
+Localization.UnregisterDynamicText(m_goExample1);
 Localization.UnregisterDynamicText(m_goExample2);
 ```
 
@@ -279,16 +280,17 @@ m_txtExample1.text = ExampleLocalization.Get("DAY_X", 1).ToString();
 
 ```cs
 // Register a Dynamic Text linked with an integer key
-ExampleLocalization.RegisterDynamicText(m_goExample2, ExampleLocalization.hero_name_5);
+ExampleLocalization.RegisterDynamicText(m_goExample1, ExampleLocalization.hero_name_5);
 // Or link gameObject with a string key
 ExampleLocalization.RegisterDynamicText(m_txtExample2, "hero_name_" + IDs.HERO_5);
 // Unregister gameObject
+ExampleLocalization.UnregisterDynamicText(m_goExample1);
 ExampleLocalization.UnregisterDynamicText(m_goExample2);
 ```
 
 ![excel-to-unity-basic-localization-component-2](https://github.com/nbhung100914/excel-to-unity-example/assets/9100041/0fcb4c69-8816-40d7-a281-6f2f8a35db44)
 
-### TextMeshProUGUI custom font.
+### TextMeshPro custom font.
 
 We will use three files `characters_map_japan`, `characters_map_korean`, and `characters_map_chinese` to create three TextMeshPro fonts for these languages. These three characters_map files contain all the characters appearing in the Localization sheet of each language.
 
