@@ -52,7 +52,7 @@ namespace Excel2Unity.Basic
             // Get localized string from sheet ExampleLocalization
             m_txtExample1.text = ExampleLocalization.Get(ExampleLocalization.hero_name_1).ToString();
             // Get localized string from sheet ExampleLocalization2
-            m_txtExample2.text = ExampleLocalization2.Get(ExampleLocalization2.DAY_X, 100).ToString();
+            m_txtExample2.text = ExampleLocalization2.Get("DAY_X", 100).ToString();
         }
 
         private void OnDestroy()
@@ -95,7 +95,7 @@ namespace Excel2Unity.Basic
         //     // Get localized string using integer key
         //     m_txtExample1.text = Localization.Get(Localization.hero_name_1).ToString();
         //     // Get localized string using string key
-        //     m_txtExample2.text = Localization.Get(Localization.DAY_X, 100).ToString();
+        //     m_txtExample2.text = Localization.Get("DAY_X", 100).ToString();
         // }
         //
         // private void OnDestroy()

@@ -233,7 +233,7 @@ m_txtCurrentLanguage.text = Localization.currentLanguage;
 // Get the localized text using integer key
 m_txtExample1.text = Localization.Get(Localization.hero_name_1).ToString();
 // Get the localized text using string key
-m_txtExample2.text = Localization.Get(Localization.DAY_X, 100).ToString();
+m_txtExample2.text = Localization.Get("DAY_X", 100).ToString();
 ```
 
 - You can link a gameObject which contain a Text or TextMeshProUGUI Component with a Key so that the Text automatically updates when the language changes.
@@ -285,7 +285,7 @@ m_txtCurrentLanguage.text = LocalizationsManager.currentLanguage;
 // Get localized string from sheet ExampleLocalization
 m_txtExample1.text = ExampleLocalization.Get(ExampleLocalization.hero_name_1).ToString();
 // Get localized string from sheet ExampleLocalization2
-m_txtExample2.text = ExampleLocalization2.Get(ExampleLocalization2.DAY_X, 100).ToString();
+m_txtExample2.text = ExampleLocalization2.Get("DAY_X", 100).ToString();
 ```
 
 ```cs
