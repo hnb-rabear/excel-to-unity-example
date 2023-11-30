@@ -282,7 +282,7 @@ m_txtExample1.text = ExampleLocalization.Get("DAY_X", 1).ToString();
 // Register a Dynamic Text linked with an integer key
 ExampleLocalization.RegisterDynamicText(m_goExample1, ExampleLocalization.hero_name_5);
 // Or link gameObject with a string key
-ExampleLocalization.RegisterDynamicText(m_txtExample2, "hero_name_" + IDs.HERO_5);
+ExampleLocalization.RegisterDynamicText(m_goExample2, "hero_name_" + IDs.HERO_5);
 // Unregister gameObject
 ExampleLocalization.UnregisterDynamicText(m_goExample1);
 ExampleLocalization.UnregisterDynamicText(m_goExample2);
