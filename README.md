@@ -193,11 +193,11 @@ public class DataCollectionBasic : ScriptableObject
 private void LoadData()
 {
     var txt =  AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Basic/Data/ExampleDataBasic1.txt");
-    m_target.dataBasic1 = JsonHelper.ToList<DataBasic1>(txt.text);
+    dataBasic1 = JsonHelper.ToList<DataBasic1>(txt.text);
     txt =  AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Basic/Data/ExampleDataBasic2.txt");
-    m_target.dataBasic2 = JsonHelper.ToList<DataBasic2>(txt.text);
+    dataBasic2 = JsonHelper.ToList<DataBasic2>(txt.text);
     txt = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Basic/Data/ExampleDataAdvanced.txt");
-    m_target. dataAdvanced = JsonHelper.ToList<DataAdvanced>(txt.text);
+    dataAdvanced = JsonHelper.ToList<DataAdvanced>(txt.text);
 }
 ```
 
@@ -213,35 +213,39 @@ private void LoadData()
 ```cs
 // Set the language japanese
 Localization.currentLanguage = "japanese";
-// Set the language korean
-Localization.currentLanguage = "korean";
 ```
 
 - Register an event handler for the language change event.
 
 ```cs
+// Register an action when language changed
 Localization.onLanguageChanged += OnLanguageChanged;
+```
+
+```csharp
+// Display current language
+m_txtCurrentLanguage.text = Localization.currentLanguage;
 ```
 
 - Get the localized content using a Key. However, with this method, the Text will not automatically update its display when the language changes.
 
 ```cs
 // Get the localized text using integer key
-m_txtExample1.text = Localization.Get(Localization.DAY_X, 1).ToString();
+m_txtExample1.text = Localization.Get(Localization.hero_name_1).ToString();
 // Get the localized text using string key
-m_txtExample1.text = Localization.Get("DAY_X", 1).ToString();
+m_txtExample2.text = Localization.Get(Localization.DAY_X, 100).ToString();
 ```
 
 - You can link a gameObject which contain a Text or TextMeshProUGUI Component with a Key so that the Text automatically updates when the language changes.
 
 ```cs
-// Register a Dynamic Text with a integer key
-Localization.RegisterDynamicText(m_goExample1 Localization.hero_name_5);
-// Register a Dynamic Text with a string key
-Localization.RegisterDynamicText(m_goExample2, "hero_name_" + IDs.HERO_5);
+// Register Dynamic localized Text
+Localization.RegisterDynamicText(m_textGameObject1, Localization.hero_name_5);
+// Register Dynamic localized Text
+Localization.RegisterDynamicText(m_textGameObject2, "TAP_TO_COLLECT");
 // Unregister the gameObject
-Localization.UnregisterDynamicText(m_goExample1);
-Localization.UnregisterDynamicText(m_goExample2);
+Localization.UnregisterDynamicText(m_textGameObject1);
+Localization.UnregisterDynamicText(m_textGameObject2);
 ```
 
 - Using LocalizationText Component.
@@ -268,24 +272,30 @@ private IEnumerator Start()
 ```
 
 ```cs
+// Register an action when language changed
 LocalizationsManager.onLanguageChanged += OnLanguageChanged;
 ```
 
 ```cs
-// Get localized text by integer key
-m_txtExample1.text = ExampleLocalization.Get(ExampleLocalization.DAY_X, 1).ToString();
-// Access localized text by string key
-m_txtExample1.text = ExampleLocalization.Get("DAY_X", 1).ToString();
+// Display current language
+m_txtCurrentLanguage.text = LocalizationsManager.currentLanguage;
 ```
 
 ```cs
-// Register a Dynamic Text linked with an integer key
-ExampleLocalization.RegisterDynamicText(m_goExample1, ExampleLocalization.hero_name_5);
-// Or link gameObject with a string key
-ExampleLocalization.RegisterDynamicText(m_goExample2, "hero_name_" + IDs.HERO_5);
+// Get localized string from sheet ExampleLocalization
+m_txtExample1.text = ExampleLocalization.Get(ExampleLocalization.hero_name_1).ToString();
+// Get localized string from sheet ExampleLocalization2
+m_txtExample2.text = ExampleLocalization2.Get(ExampleLocalization2.DAY_X, 100).ToString();
+```
+
+```cs
+// Register Dynamic localized Text in sheet ExampleLocalization
+ExampleLocalization.RegisterDynamicText(m_textGameObject1, ExampleLocalization.hero_name_5);
+// Register Dynamic localized Text in sheet ExampleLocalization2
+ExampleLocalization2.RegisterDynamicText(m_textGameObject2, "TAP_TO_COLLECT");
 // Unregister gameObject
-ExampleLocalization.UnregisterDynamicText(m_goExample1);
-ExampleLocalization.UnregisterDynamicText(m_goExample2);
+ExampleLocalization.UnregisterDynamicText(m_textGameObject1);
+ExampleLocalization2.UnregisterDynamicText(m_textGameObject2);
 ```
 
 ![excel-to-unity-basic-localization-component-2](https://github.com/nbhung100914/excel-to-unity-example/assets/9100041/0fcb4c69-8816-40d7-a281-6f2f8a35db44)
