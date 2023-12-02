@@ -1,4 +1,4 @@
-**This project is a simple guide to help you understand the [Excel2Unity tool](https://github.com/nbhung100914/excel-to-unity).**
+**This project is a simple guide to help you understand the [Excel To Unity tool](https://github.com/nbhung100914/excel-to-unity).**
 
 # Getting Started
 
