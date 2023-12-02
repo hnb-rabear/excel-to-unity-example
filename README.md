@@ -4,7 +4,7 @@
 
 This repository consists of two main parts:
 
-- Basic part: This section will help you understand more about designing data to use Excel2Unity.
+- Basic part: This section will help you understand more about designing data to use Excel To Unity.
 - Advanced part: In this section, we will explore how a real mid-core RPG game uses this tool.
 
 However, in this article, I will only be discussing the basic part. The advanced part will be supplemented later.
@@ -100,7 +100,7 @@ Create 3 directories to store the files that will be exported:
 - `Assets\Basic\Data` to store the exported Json data.
 - `Assets\Basic\Resources\Data` to store the Localization data.
 
-### Excel2Unity
+### Excel To Unity
 
 Enter the paths to the directories created above, and other necessary settings.
 
@@ -109,7 +109,7 @@ Enter the paths to the directories created above, and other necessary settings.
 - Json Data Output: `[your project path]\Assets\Basic\Data`.
 - Constant Output: `[Your project path]\Assets\Basic\Scripts\Generated`, IDs, Constants, Localization API, and LocalizationText Component will be stored here.
 - Localization Output: `[Your project path]\Assets\Basic\Resources\Data`, Localization data needs to be stored in the Resources folder to load/unload language files.
-- Namespace: `Excel2Unity.Basic`.
+- Namespace: `Excel To Unity.Basic`.
 - Languages maps: `korean, japanese, chinese`, we will create a separate characters map for these 3 languages
 
 ![excel-to-unity-basic-exporting](https://github.com/nbhung100914/excel-to-unity-example/assets/9100041/1adc69e7-06fc-433a-b59c-fc2049a53163)
@@ -176,7 +176,7 @@ public class DataAdvanced : AttributesCollection<AttributeParse>
 - Create a ScriptableObject that contains the above Serializable Objects.
 
 ```cs
-[CreateAssetMenu(fileName = "DataCollectionBasic", menuName = "Excel2Unity/DataCollectionBasic")]
+[CreateAssetMenu(fileName = "DataCollectionBasic", menuName = "Excel To Unity/DataCollectionBasic")]
 public class DataCollectionBasic : ScriptableObject
 {
     public List<DataBasic1> dataBasic1;
