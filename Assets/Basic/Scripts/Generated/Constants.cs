@@ -25,7 +25,6 @@ namespace Excel2Unity.Basic
 		public static readonly Vector2 EXAMPLE_VECTOR2_2 = new Vector2(1f, 2f); /*Vector2 example*/
 		public static readonly Vector3 EXAMPLE_VECTOR3 = new Vector3(3f, 3f, 4f); /*Vector3 example*/
 	
-	
 	}
 	
 }

@@ -15,6 +15,24 @@ namespace Excel2Unity.Basic
             public string name;
         }
         
+        [Serializable]
+        public class NestedArrayExample
+        {
+            public int[] examples;
+        }
+        
+        [Serializable]
+        public class NestedJsonExample
+        {
+            [Serializable]
+            public class MyClass
+            {
+                public string[] name;
+            }
+
+            public MyClass examples;
+        }
+        
         public string[] array1;
         public int[] array2;
         public int[] array3;
@@ -22,5 +40,7 @@ namespace Excel2Unity.Basic
         public int[] array5;
         public string[] array6;
         public Example json1;
+        public NestedArrayExample nestedArray;
+        public NestedJsonExample nestedJson;
     }
 }

@@ -18,36 +18,99 @@ MonoBehaviour:
     numberExample3: 1
     boolExample: 1
     stringExample: text
+    currency:
+      coin:
+        min: 10
+        max: 20
+      gemMin: 1
+      gemMax: 2
+    character:
+      name: Rome
+      sex: 2
   - numberExample1: 2
     numberExample2: 20
     numberExample3: 3
     boolExample: 1
     stringExample: text
+    currency:
+      coin:
+        min: 20
+        max: 40
+      gemMin: 2
+      gemMax: 4
+    character:
+      name: Tokyo
+      sex: 2
   - numberExample1: 3
     numberExample2: 8
     numberExample3: 5
     boolExample: 0
     stringExample: text
+    currency:
+      coin:
+        min: 30
+        max: 60
+      gemMin: 3
+      gemMax: 6
+    character:
+      name: Berlin
+      sex: 2
   - numberExample1: 6
     numberExample2: 3
     numberExample3: 10
     boolExample: 0
     stringExample: text
+    currency:
+      coin:
+        min: 40
+        max: 80
+      gemMin: 4
+      gemMax: 8
+    character:
+      name: Paris
+      sex: 2
   - numberExample1: 9
     numberExample2: 2
     numberExample3: 16
     boolExample: 0
     stringExample: text
+    currency:
+      coin:
+        min: 50
+        max: 100
+      gemMin: 5
+      gemMax: 10
+    character:
+      name: Hanoi
+      sex: 3
   - numberExample1: 14
     numberExample2: 7
     numberExample3: 24
     boolExample: 1
     stringExample: text
+    currency:
+      coin:
+        min: 60
+        max: 120
+      gemMin: 6
+      gemMax: 12
+    character:
+      name: Beijing
+      sex: 3
   - numberExample1: 14
     numberExample2: 8
     numberExample3: 24
     boolExample: 1
     stringExample: text
+    currency:
+      coin:
+        min: 70
+        max: 140
+      gemMin: 7
+      gemMax: 14
+    character:
+      name: London
+      sex: 3
   dataBasic2:
   - array1:
     - text1
@@ -61,6 +124,14 @@ MonoBehaviour:
     json1:
       id: 0
       name: 
+    nestedArray:
+      examples: 0a000000140000001e00000032000000
+    nestedJson:
+      examples:
+        name:
+        - english
+        - spansih
+        - japanese
   - array1:
     - text2
     array2: 020000000200000003000000
@@ -73,6 +144,14 @@ MonoBehaviour:
     json1:
       id: 1
       name: John Doe 1
+    nestedArray:
+      examples: 0b000000140000001e00000032000000
+    nestedJson:
+      examples:
+        name:
+        - english
+        - spansih
+        - japanese
   - array1:
     - text1
     - text2
@@ -86,6 +165,14 @@ MonoBehaviour:
     json1:
       id: 2
       name: John Doe 2
+    nestedArray:
+      examples: 0c000000140000001e00000032000000
+    nestedJson:
+      examples:
+        name:
+        - english
+        - spansih
+        - japanese
   - array1:
     - text1
     - text2
@@ -100,6 +187,14 @@ MonoBehaviour:
     json1:
       id: 2
       name: JohnDoe 2
+    nestedArray:
+      examples: 0d000000140000001e00000032000000
+    nestedJson:
+      examples:
+        name:
+        - english
+        - spansih
+        - japanese
   - array1:
     - text3
     array2: 0400000002000000
@@ -112,6 +207,14 @@ MonoBehaviour:
     json1:
       id: 0
       name: 
+    nestedArray:
+      examples: 0e000000140000001e00000032000000
+    nestedJson:
+      examples:
+        name:
+        - english
+        - spansih
+        - japanese
   - array1:
     - text1
     - text4
@@ -125,6 +228,14 @@ MonoBehaviour:
     json1:
       id: 0
       name: 
+    nestedArray:
+      examples: 0f000000140000001e00000032000000
+    nestedJson:
+      examples:
+        name:
+        - english
+        - spansih
+        - japanese
   - array1:
     - text1
     - text2
@@ -139,6 +250,14 @@ MonoBehaviour:
     json1:
       id: 0
       name: 
+    nestedArray:
+      examples: 10000000140000001e00000032000000
+    nestedJson:
+      examples:
+        name:
+        - english
+        - spansih
+        - japanese
   dataAdvanced:
   - Attributes:
     - id: 1
