@@ -1,14 +1,5 @@
 **This project is a simple guide to help you understand the [Excel To Unity tool](https://github.com/nbhung100914/excel-to-unity).**
 
-# Getting Started
-
-This repository consists of two main parts:
-
-- Basic part: This section will help you understand more about designing data to use Excel To Unity.
-- Advanced part: In this section, we will explore how a real mid-core RPG game uses this tool.
-
-However, in this article, I will only be discussing the basic part. The advanced part will be supplemented later.
-
 ## 1. Structure of the Excel File
 
 First, open the excel file located at `/Assets/Basic/Data/Example.xlsx`. This is a sample Excel file. Within this file, there are sheets containing sample data that will help you understand how to design various types of data such as IDs, Constants, and Data Tables.
@@ -22,11 +13,13 @@ First, open the excel file located at `/Assets/Basic/Data/Example.xlsx`. This is
 | ---- | ---- | ----- | ------- |
 ```
 
-- The sheet name needs to have `Constants` as a prefix or suffix.
+Constants Sheets, named with the suffix `Constants` compile project constants. The design rules are:
+
+- The sheet name must end with `Constants`.
 - There are four columns: Name, Type, Value, and Comment.
-- Name: This is the name of the constant, it must be written continuously, does not contain special characters, and should be capitalized.
-- Type: This is the data type of the constant. You can use the following data types: `int`, `float`, `bool`, `string`, `int-array`, `float-array`, `vector2`, and `vector3`.
-- Value: The value corresponding to the data type. For array data types, elements must be separated by `:` or `|` or `newline`.
+  - Name: The name of the constant; must be continuous, without special characters.
+  - Type: The data type of the constant. Possible data types include: `int`, `float`, `bool`, `string`, `int-array`, `float-array`, `vector2`, and `vector3`.
+  - Value: The value matching the data type. For array types, separate elements with `:` or `|` or `newline`.
 
 ### IDs:
 
@@ -35,14 +28,16 @@ First, open the excel file located at `/Assets/Basic/Data/Example.xlsx`. This is
 | ----- | --- | ------- |
 ```
 
-- The sheet name needs to have `IDs` as a prefix or suffix.
-- In this Sheet, only use the Integer data type.
-- Each group is arranged in 3 consecutive columns.
-- The first row contains the group name for easy lookup.
-- The first column contains the Key Name, and the next column contains the Key Value.
+ID Sheets, named with the suffix `IDs` are used to compile all IDs into Integer Constants. The design rules are:
+
+- The sheet name must end with `IDs`.
+- Only the Integer data type is allowed.
+- Each group is organized in 3 consecutive columns.
+- The first row contains the group name for easy reference.
+- The first column holds the Key Name, and the next column holds the Key Value.
 - Key Value must be an integer.
-- By default, all ids of a column will be exported as Integer Constants, but you can also export them as enum by adding the suffix [enum] to the group name.
-- You can choose to only export enum and ignore Integer Constant by selecting `Only enum as IDs` in the Settings section.
+- By default, all IDs in a column will be exported as Integer Constants. Add the suffix [enum] to the group name to export them as an enum.
+- To only export enums and skip Integer Constants, select `Only enum as IDs` in the Settings.
 
 ### Localization:
 
@@ -51,10 +46,13 @@ First, open the excel file located at `/Assets/Basic/Data/Example.xlsx`. This is
 | -------- | ---------- | ------- | ------- | ----- | ---- |
 ```
 
-- The sheet name must have `Localization` as a prefix or suffix.
-- This sheet has a structure that includes 2 key columns, one is the main key `idString` and the other is the additional key `relativeId`.
-- The following columns will contain localized content.
-- The key of a row is a combination of `idString` and `relativeId`.
+Localization Sheets are named with the prefix `Localization` and follow these rules:
+
+- TThe sheet name must start with `Localization`.
+- Each sheet has two key columns: the main key `idString` and an additional key `relativeId`.
+- The following columns contain localized content.
+- The key for each row is a combination of `idString` and `relativeId`.
+- `relativeId` can reference an ID from the IDs sheets.
 
 ```
 For example, if idString is "hero_name" and relativeId is 1, then the key will be hero_name_1
